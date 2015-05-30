@@ -104,9 +104,12 @@ module SEPA
         builder.InitgPty do
           builder.Nm(account.name)
           builder.Id do
-            builder.PrvtId do
+            builder.OrgId do
               builder.Othr do
                 builder.Id(account.creditor_identifier)
+                  builder.SchmeNm do
+                    builder.Cd "B2B"
+                  end
               end
             end
           end
